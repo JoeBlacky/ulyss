@@ -1,0 +1,19 @@
+/* Map =================================================================================== */
+    .map{
+        position: relative;
+        max-height: 400px;
+        margin: 0 0 $main-indent;
+        overflow: hidden;
+        background: #FFF;
+        > img{
+            width: 100%;
+        }
+        > div {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+    }
+/* ======================================================================================= */

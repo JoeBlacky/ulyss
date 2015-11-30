@@ -1,0 +1,30 @@
+/* Links ================================================================================= */
+    #{$links-class}{
+        a{
+            color: $link-color;
+        }
+        li{
+            padding: 0 0 $main-indent/1.3;
+        }
+    }
+/* Contact Links ========================================================================= */
+    #{$contact-links-class}{
+        #{$icn-class}{
+            line-height: 20px;
+            &:before{
+                width: 40px;
+                height: 40px;
+                margin: 0 $main-indent/2 0 0;
+                text-align: center;
+                font: 24px/40px $icn-font;
+                background: $secondary-color;
+                @extend %inline-block-middle;
+            }
+        }
+        .mail{
+            &:before{
+                font-size: 20px;
+            }
+        }
+    }
+/* ======================================================================================= */

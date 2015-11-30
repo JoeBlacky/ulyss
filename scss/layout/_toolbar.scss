@@ -1,0 +1,81 @@
+/* Common ================================================================================ */
+    .toolbar{
+        padding: 30px 0;
+        margin: 0 0 20px;
+        border-bottom: 1px solid $border-color;
+        .mw{
+            border: 0;
+            text-align: left;
+        }
+    }
+    .sorter{
+        > .itm{
+            vertical-align: top;
+        }
+    }
+    .view-mode{
+        margin: 0 $main-indent 0 0;
+        label{
+            display: block;
+        }
+        a{
+            opacity: .5;
+            &:hover{
+                opacity: 1;
+            }
+        }
+        .icn{
+            width: 30px;
+            height: 30px;
+            color: #FFF;
+            text-align: center;
+            background: $primary-dark-color;
+            &:before{
+                display: block;
+                font-size: 14px;
+                line-height: 32px;
+            }
+        }
+        .grid{
+            &:before{
+                content: '\E803';
+            }
+        }
+        .list{
+            margin: 0 0 0 ($main-indent/2);
+            &:before{
+                content: '\E804';
+            }
+        }
+    }
+    .sort-by{
+        margin: 0 ($main-indent/2) 0 0;
+        .itm{
+            width: 150px;
+            vertical-align: bottom;
+        }
+        .icn{
+            width: 20px;
+            text-align: center;
+            font-size: 12px;
+            line-height: 40px;
+        }
+        .asc{
+            &:before{
+                content: '\E805';
+            }
+        }
+        .desc{
+            &:before{
+                content: '\E806';
+            }
+        }
+    }
+/* Search Resulut Toolbar ================================================================ */
+    .search-result{
+        + .toolbar{
+            padding-top: $main-indent/2;
+            border-top: 1px solid $primary-dark-color;
+        }
+    }
+/* Common ================================================================================ */

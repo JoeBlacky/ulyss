@@ -1,0 +1,162 @@
+@media screen and  (min-width: $step4){
+    /* Back to Top =========================================================================== */
+        #{$btn-scroll-top-class}{
+            position: fixed;
+            width: 3.125rem;
+            height: 3.75rem;
+            bottom: -3.75rem;
+            right: 1.25rem;
+            opacity: .5;
+            &.active{
+                bottom: -.625rem;
+            }
+            &:hover{
+                opacity: 1;
+                bottom: 0;
+            }
+            &:before{
+                display: block;
+                font: 2.5rem/3.125rem $icn-font;
+            }
+        }
+    /* Links ================================================================================= */
+        #{$links-class}{
+            a{
+                border-bottom: 1px solid transparent;
+                &:hover{
+                    border-bottom-color: $link-color;
+                }
+            }
+        }
+    /* Team ================================================================================== */
+        #{$team-class}{
+            .mmbr{
+                &:hover{
+                    .img{
+                        &:before{
+                            opacity: .9;
+                        }
+                    }
+                    .socials{
+                        opacity: 1;
+                        @include scale(1);
+                    }
+                    .info{
+                        background: $primary-dark-color;
+                        color: #FFF;
+                        strong{
+                            color: inherit;
+                        }
+                    }
+                }
+            }
+            .img{
+                white-space: nowrap;
+                &:before{
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    left: 0;
+                    top: 0;
+                    opacity: 0;
+                    background: #FFF;
+                }
+                > .itm{
+                    white-space: normal;
+                }
+            }
+            .socials{
+                position: relative;
+                margin: 0 0 0 -100%;
+                opacity: 0;
+                @include scale(.5);
+                .icn{
+                    width: 3.125rem;
+                    height: 3.125rem;
+                    font: 1.25rem/2.5 $icn-font;
+                    &:hover{
+                        background: lighten($primary-dark-color, 10%);
+                    }
+                }
+            }
+        }
+    /* Navigation ============================================================================ */
+        .nav{
+            li{
+                &:hover{
+                    .dd{
+                        max-height: 3.1875rem;
+                        margin-top: 1px;
+                    }
+                    > .nav-itm{
+                        color: $primary-dark-color;
+                        &:before{
+                            height: .3125rem;
+                        }
+                    }
+                }
+            }
+            .nav-itm{
+                &:before{
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 0;
+                    left: 0;
+                    bottom: 0;
+                    background: $primary-dark-color;
+                }
+            }
+        }
+    /* Main Slider =========================================================================== */
+        #{$main-slider-class}{
+            &:hover{
+                #{$slider-class}{
+                    &-prev{
+                        left: 0;
+                    }
+                    &-next{
+                        right: 0;
+                    }
+                }
+            }
+            #{$slider-class}{
+                &-buttons{
+                    div{
+                        position: absolute;
+                        width: 3.125rem;
+                        height: 100%;
+                        top: 0;
+                        background: $primary-dark-color;
+                        opacity: .5;
+                        color: #FFF;
+                        cursor: pointer;
+                        &:hover{
+                            opacity: .7;
+                        }
+                        &:before{
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            font: 2.5rem/1 $icn-font;
+                            @include translate(-50%,-50%);
+                        }
+                    }
+                }
+                &-prev{
+                    left: -50px;
+                    &:before{
+                        content: '\E809';
+                    }
+                }
+                &-next{
+                    right: -50px;
+                    &:before{
+                        content: '\E801';
+                    }
+                }
+            }
+        }
+    /* ======================================================================================= */
+}

@@ -1,0 +1,27 @@
+@import 'base/reset';
+@import 'base/fonts';
+
+@import 'utils/variables';
+@import 'utils/mixins';
+@import 'utils/placeholders';
+@import 'utils/keyframes';
+
+@import 'layout/page';
+@import 'layout/header';
+@import 'layout/toolbar';
+@import 'layout/grid';
+@import 'layout/forms';
+@import 'layout/footer';
+
+@import 'pages/static-pages';
+@import 'pages/home';
+@import 'pages/category';
+@import 'pages/about';
+@import 'pages/prices';
+
+@import 'components/icons';
+@import 'components/sliders';
+@import 'components/team';
+@import 'components/map';
+@import 'components/links';
+@import 'components/media';

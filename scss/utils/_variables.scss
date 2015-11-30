@@ -1,0 +1,69 @@
+ /* Variables ============================================================================= */
+    $primary-color: #3B454E;
+    $primary-dark-color: #282F37;
+    $primary-light-color: #E1E6EA;
+    $secondary-color: #25B7A4;
+    $background-color: #F0EDE5;
+    $border-color: #CCC;
+    $white: #FFF;
+/* Variables Social Colors =============================================================== */
+    $twitter-color: #5EA9DD;
+    $facebook-color: #3B5998;
+    $instagram-color: #AD856B;
+    $pinterest-color: #CC2128;
+    $google-plus-color: #F2553B;
+    $google-plus-dark-color: #42413F;
+    $youtube-background-color: #DF2826;
+    $success-color: #5F9E31;
+    $error-color: #EE3342;
+    $rss-color: #FF9900;
+/* Variables Fonts ======================================================================= */
+    $primary-font: 'GlasnostLight', sans-serif;
+    $icn-font: 'Fontello';
+    $icn-class: '.icn';
+/* Variables Sprites ===================================================================== */
+    $main-width: 1200px;
+    $max-width: 1920px;
+    $min-width: 320px;
+    $main-padding: 30px;
+/* Transition Speed ====================================================================== */
+    $fast-speed: .2s;
+    $normal-speed: .3s;
+    $slow-speed: .5s;
+/* Images ================================================================================ */
+    $loader-image: url('../images/ajax-loader.gif') no-repeat center center;
+/* Indents =============================================================================== */
+    $main-indent: 20px;
+    $header-height: 68px;
+/* Grid Sections Variables =============================================================== */
+    $team-class: '.team';
+/* Sliders Variables ===================================================================== */
+    $slider-class: '.owl';
+    $main-slider-class: '.main-slider';
+    $feedbacks-slider-class: '.feedbacks-slider';
+    $grid-slider-class: '.grid-slider';
+/* Button Variables ====================================================================== */
+    $resp-size:16px;
+    $btn-padding: .625*$resp-size 1.25*$resp-size;
+    $btn-color: $white;
+    $btn-font: 400 1rem/1.25rem $primary-font;
+    $btn-background: $secondary-color;
+    $btn-scroll-top-class: '.bck-top';
+/* Links Variables ======================================================================= */
+    $link-color: $white;
+    $links-class: '.links'; // Used in Footer;
+    $contact-links-class: '.contact'; // Links with icons, same used in Footer;
+/* Breakpoints Variables ================================================================= */
+    $step1: 1440px;
+    $step2: 1240px;
+    $step3: 1100px;
+    $step4: 1025px;
+    $step5: 1024px;
+    $step6: 940px;
+    $step7: 800px;
+    $step8: 730px;
+    $step9: 600px;
+    $step10: 500px;
+    $step11: 440px;
+    $step12: 320px;
+/* ======================================================================================= */

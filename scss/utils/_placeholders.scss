@@ -1,0 +1,54 @@
+/* Placeholders ========================================================================== */
+    %border-box{
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    %no-select{
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+    }
+    %border-radius-50{
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        border-radius: 50%;
+    }
+    %transition-slow-speed{
+        @include transition($slow-speed);
+    }
+    %transition-normal-speed{
+        @include transition($normal-speed);
+    }
+    %transition-fast-speed{
+        @include transition($fast-speed);
+    }
+    %inline-block-top{
+        @include inline-block(top);
+    }
+    %inline-block-middle{
+        @include inline-block(middle);
+    }
+    %inline-block-bottom{
+        @include inline-block(bottom);
+    }
+    %btn{
+        padding: $btn-padding;
+        font: $btn-font;
+        color: $btn-color;
+        cursor: pointer;
+        border: 0;
+        text-align: center;
+        background: $btn-background;
+        @extend %transition-normal-speed;
+        @extend %inline-block-middle;
+    }
+    %overlay{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+    }
+/* ======================================================================================= */

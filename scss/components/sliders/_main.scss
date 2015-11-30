@@ -1,0 +1,26 @@
+/* Main Slider =========================================================================== */
+    #{$main-slider-class}{
+        position: relative;
+        display: block;
+        margin: 0 auto;
+        font-size: 0;
+        white-space: nowrap;
+        .itm{
+            width: 100%;
+            @extend %transition-fast-speed;
+        }
+        .dsc{
+            margin: 0 0 0 -100%;
+            color: #FFF;
+            text-align: center;
+            @extend %transition-normal-speed;
+        }
+        h3{
+            display: inline-block;
+            padding: 2.5rem;
+            font-size: 3.125rem;
+            background: rgba($primary-dark-color, .8);
+            @include border-radius(2px);
+        }
+    }
+/* ======================================================================================= */

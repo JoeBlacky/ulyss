@@ -1,0 +1,39 @@
+@media screen and (max-width: $step7){
+    /* Common ================================================================================ */
+        .ttl{
+            font-size: 24px;
+        }
+    /* Footer ================================================================================ */
+        .footer{
+            .btn,
+            .links{
+                width: 100%;
+            }
+            .links{
+                a{
+                    font-size: 14px;
+                }
+            }
+            .contact{
+                margin: 20px 0 30px;
+            }
+        }
+        .contact{
+            text-align: center;
+            .icn{
+                width: 22%;
+                height: 110px;
+                margin: 0 1.5%;
+                padding: 0 5px;
+                border: 1px solid #8D8F92;
+                @include inline-block(top);
+                &:before{
+                    display: block;
+                    margin: -20px auto 10px;
+                    border-left: 10px solid $primary-dark-color;
+                    border-right: 10px solid $primary-dark-color;
+                }
+            }
+        }
+    /* ======================================================================================= */
+}

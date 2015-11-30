@@ -1,0 +1,40 @@
+/* Feedbacks ============================================================================= */
+    #{$feedbacks-slider-class}{
+        #{$slider-class}{
+            &-wrapper-outer{
+                @extend %transition-normal-speed;
+            }
+            &-item{
+                text-align: center;
+                font-size: 18px;
+            }
+        }
+        img{
+            width: 100px;
+            margin: 0 0 $main-indent;
+            border: 3px solid $primary-dark-color;
+            @extend %border-radius-50;
+        }
+        q{
+            display: block;
+            margin: 0 0 $main-indent/2;
+            font: 20px/30px $primary-font;
+            line-height: 24px;
+            &:before,
+            &:after{
+                content: '\E80A';
+                margin: 0 0 0 $main-indent/4;
+                font: 10px/16px $icn-font;
+                @extend %inline-block-bottom;
+            }
+            &:before{
+                vertical-align: top;
+                margin: 0 $main-indent/4 0 0;
+                @include rotate(180);
+            }
+        }
+        i{
+            color: lighten($primary-color,10%);
+        }
+    }
+/* ======================================================================================= */

@@ -1,0 +1,78 @@
+/* Common ================================================================================ */
+    .owl{
+        &-carousel{
+            display: none;
+            -ms-touch-action: pan-y;
+        }
+        &-wrapper-outer{
+            overflow: hidden;
+            @extend %transition-normal-speed;
+        }
+        &-wrapper{
+            display: none;
+            position: relative;
+            font-size: 0;
+            text-align: left;
+            -webkit-transform: translate3d(0px, 0px, 0px);
+        }
+        &-item{
+            @extend %inline-block-top;
+            &.loading{
+                min-height: 100px;
+                background: $loader-image;
+            }
+        }
+        &-wrapper,
+        &-item{
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -ms-backface-visibility: hidden;
+            -webkit-transform: translate3d(0,0,0);
+            -moz-transform: translate3d(0,0,0);
+            -ms-transform: translate3d(0,0,0);
+        }
+        &-pagination{
+            text-align: center;
+        }
+        &-page{
+            margin: 0 5px;
+            @extend %inline-block-middle;
+            &.active{
+                span{
+                    background: transparent;
+                    @include scale(1);
+                }
+            }
+            span{
+                display: block;
+                width: 16px;
+                height: 16px;
+                background: $FADED_BLUE;
+                font-size: 0;
+                cursor: pointer;
+                border: 2px solid $FADED_BLUE;
+                @include scale(.8);
+                @extend %border-radius-50;
+                @extend %transition-normal-speed;
+            }
+        }
+        &-controls{
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            @extend %no-select;
+        }
+        &-buttons{
+            div{
+                @extend %transition-normal-speed;
+            }
+        }
+        &-origin {
+            -webkit-perspective: 1200px;
+            -webkit-perspective-origin-x : 50%;
+            -webkit-perspective-origin-y : 50%;
+            -moz-perspective : 1200px;
+            -moz-perspective-origin-x : 50%;
+            -moz-perspective-origin-y : 50%;
+            perspective : 1200px;
+        }
+    }
+/* ======================================================================================= */

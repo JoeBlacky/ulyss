@@ -1,0 +1,36 @@
+    $iconsGridClass: '.iconsGrid';
+/* Icons ================================================================================= */
+    #{$iconsGridClass}{
+        #{$icnClass}{
+            font: 700 36px/1.1 $primary-font;
+         }
+    }
+/* Media Queries ========================================================================= */
+    @media screen and (max-width: $step3){
+        #{$iconsGridClass}{
+            #{$icnClass}{
+                font-size: 30px;
+            }
+            .itm{
+                width: 45%;
+                padding: $mainIndent;
+                margin: $mainIndent 2.5%;
+            }
+        }
+    }
+    @media screen and (max-width: $step5){
+        #{$iconsGridClass}{
+            #{$icnClass}{
+                font-size: 24px;
+            }
+        }
+    }
+    @media screen and (max-width: $step6){
+        #{$iconsGridClass}{
+            .itm{
+                width: 95%;
+                margin: 0 2.5%;
+            }
+        }
+    }
+/* ======================================================================================= */

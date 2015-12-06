@@ -1,0 +1,76 @@
+/* heroImageSection ====================================================================== */
+    $heroImageSection: '.heroImage';
+    $heroImageBackground: 'heroImage.jpg';
+    #{$heroImageSection}{
+        padding-top: $mainIndent;
+        background: #000 url('../img/#{$heroImageBackground}') no-repeat center center;
+        header{
+            max-width: 780px;
+            margin: 0 auto $mainIndent;
+        }
+        h2{
+            font: 38px/1 $primary-font-book;
+            color: #FFF;
+        }
+        .formWrapper{
+            margin: 0 0 0 auto;
+            background: rgba(#000, .75);
+            h2{
+                font-size: 54px;
+            }
+            b{
+                font-size: 34px;
+            }
+            span{
+                display: block;
+                margin: 0 0 30px;
+                font: 36px/1 $primary-font-book;
+            }
+        }
+        .price{
+            max-width: 280px;
+            margin: 0 auto;
+            color: #FFF;
+            font-size: 106px;
+            s{
+                display: block;
+                font-size: 40px;
+            }
+        }
+    }
+/* Media Queries ========================================================================= */
+    @media screen and (max-width: $step4){
+        #{$heroImageSection}{
+            h1{
+                font-size: 50px;
+            }
+            h2{
+                font-size: 30px;
+            }
+            .formWrapper{
+                h2{
+                    font-size: 44px;
+                }
+                b,
+                span{
+                    font-size: 30px;
+                }
+                span{
+                    margin: 0 0 $mainIndent;
+                }
+            }
+            .price{
+                text-align: center;
+                font-size: 80px;
+            }
+        }
+    }
+    @media screen and (max-width: $step6){
+        #{$heroImageSection}{
+            text-align: center;
+            .formWrapper{
+                margin: 0 auto $mainIndent;
+            }
+        }
+    }
+/* ======================================================================================= */

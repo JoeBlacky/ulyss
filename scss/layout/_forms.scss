@@ -1,36 +1,57 @@
 /* Common ================================================================================ */
-    input,
-    select,
-    textarea{
+    form{
+        &:before{
+            content: '';
+            background: rgba(#FFF, .7) url('../img/ajaxLoader.gif') no-repeat center center;
+            @extend %overlay;
+            @extend %hidden;
+            @extend %transition-normal-speed;
+        }
+        &.loading{
+            position: relative;
+            &:before{
+                @extend %visible;
+            }
+        }
+    }
+    fieldset{
+        text-align: left;
+    }
+    input{
         display: block;
         width: 100%;
-        padding: 5px 7px;
+        height: 40px;
+        margin: 0 0 20px;
+        padding: 10px;
+        background: transparent;
+        border: 0;
+        outline: 0;
+        background: #FFF;
+        font: 14px/20px 'Arial', sans-serif;
+        color: #252525;
         -webkit-appearance: none;
         -moz-appearance: none;
         -ms-appearance: none;
         appearance: none;
-        font: 16px/20px $primary-font;
-        color: #FFF;
-        background: transparent;
-        border: 1px solid #8D8F92;
+        @include border-radius(1px);
+        @extend %border-box;
         @extend %transition-normal-speed;
-        &:focus{
-            border-color:$background-color;
+        &:valid{
+            border: 1px solid rgba($successColor,.1);
         }
-    }
-    input,
-    select{
-        height: 30px;
-    }
-    input{
-        &:invalid{
-            border-color:rgba($error-color,.9);
-            background:rgba($error-color,.1);
-        }
-    }
-    select{
-        &::ms-expand{
-            opacity: 0;
+        &[type="submit"],
+        &[type="button"]{
+            width: auto;
+            height: auto;
+            padding: 10px 20px;
+            background: $secondary-color;
+            font: 700 20px/28px $primary-font;
+            color: #FFF;
+            cursor: pointer;
+            @extend %inline-block-middle;
+            &:hover{
+                background: $successColor;
+            }
         }
     }
     label{
@@ -39,57 +60,12 @@
         font-size: 14px;
         cursor: pointer;
     }
-    textarea{
-        resize: vertical;
-        overflow: auto;
-        max-height: 300px;
-        min-height: 100px;
-    }
-/* Custom Select ========================================================================= */
-    .input-select{
-        position: relative;
-        background: #FFF;
-        &:before{
-            content: '\E802';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 30px;
-            height: 100%;
-            text-align: center;
-            font: 20px/30px $icn-font;
-            color: $secondary-color;
-            background: $primary-dark-color;
-            z-index: 0;
-        }
-        select{
-            padding: 5px 30px 5px 5px;
-            position: relative;
-            z-index: 2;
-            background: transparent;
-            cursor: pointer;
-            border: 1px solid $primary-dark-color;
-        }
-    }
-/* Required Fields ======================================================================= */
-    .required{
-        em{
-            color: $error-color;
-        }
-    }
-/* Validation ============================================================================ */
-    .validation-advice{
-        position: absolute;
-        font-size: 10px;
-        color: $error-color;
-    }
-/* Form ================================================================================== */
-    .form{
-        textarea{
-            resize: none;
-        }
-        .field{
-            margin: 0 0 $main-indent;
-        }
+    .formWrapper{
+        max-width: 320px;
+        padding: 20px;
+        margin: 0 auto;
+        text-align: center;
+        color: #FFF;
+        @extend %border-box;
     }
 /* ======================================================================================= */

@@ -1,0 +1,87 @@
+/* productsSection ======================================================================= */
+    $productsSection: '.products';
+    $productFeaturesClass: '.productFeatures';
+    .productsGrid{
+        font-size: 0;
+        > .itm{
+            width: 50%;
+            margin: 0 0 40px;
+            text-align: center;
+            font: 16px/1.1 $primary-font;
+            color: $GRAY_COLOR;
+        }
+        img{
+            display: block;
+            margin: 0 auto 20px;
+        }
+        .ttl{
+            margin: 0 0 15px;
+            color: $DARK_ORANGE_COLOR;
+            font: 700 36px/1.1 $primary-font;
+        }
+        .spec{
+            margin: 0 0 15px;
+            line-height: 1.6;
+        }
+        .price{
+            margin: 0 0 15px;
+            s{
+                display: block;
+                font-weight: 700;
+            }
+            b{
+                color: $DARK_ORANGE_COLOR;
+                font-size: 60px;
+            }
+        }
+    }
+    .userCallingIn{
+        color: $FADED_BLUE;
+        font: 64px/1.2 $primary-font-book;
+        text-align: center;
+        p{
+            margin: 0 0 40px;
+        }
+        b{
+            display: block;
+            font-family: $primary-font;
+        }
+    }
+    #{$productFeaturesClass}{
+        font-size: 0;
+        text-align: center;
+        .itm{
+            vertical-align: bottom;
+            width: 31.25%;
+            padding: 0 0 20px;
+            margin: 2.08334% 4.1667%;
+            color: $DARK_ORANGE_COLOR;
+            border-bottom: 1px solid $secondary-color;
+            &:before{
+                border-color: $DARK_ORANGE_COLOR;
+            }
+        }
+    }
+/* Media Queries ========================================================================= */
+    @media screen and (max-width: $step4){
+        .userCallingIn{
+            font-size: 50px;
+            p{
+                margin: 0 0 $mainIndent;
+            }
+        }
+    }
+    @media screen and (max-width: $step6){
+        .productsGrid{
+            > .itm{
+                width: 100%;
+                margin: 0 0 $mainIndent;
+            }
+        }
+    }
+    @media screen and (max-width: $step7){
+        .userCallingIn{
+            font-size: 30px;
+        }
+    }
+/* ======================================================================================= */

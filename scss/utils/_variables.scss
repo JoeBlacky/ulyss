@@ -14,9 +14,14 @@
     $google-plus-color: #F2553B;
     $google-plus-dark-color: #42413F;
     $youtube-background-color: #DF2826;
-    $success-color: #5F9E31;
+    $successColor: #02B864;
     $error-color: #EE3342;
-    $rss-color: #FF9900;
+
+    $FADED_BLUE: #3E4750;
+    $GRAY_COLOR: #7A8387;
+    $ORANGE_COLOR: #FDB703;
+    $DARK_ORANGE_COLOR: #FF3F1F;
+    $attentionColor: $ORANGE_COLOR;
 /* Variables Fonts ======================================================================= */
     $primary-font: 'bebasNeue', sans-serif;
     $primary-font-book: 'bebasNeueBook', sans-serif;
@@ -26,7 +31,6 @@
     $main-width: 960px;
     $max-width: 1920px;
     $min-width: 320px;
-    $main-padding: 30px;
 /* Transition Speed ====================================================================== */
     $fast-speed: .2s;
     $normal-speed: .3s;
@@ -34,37 +38,21 @@
 /* Images ================================================================================ */
     $loader-image: url('../images/ajax-loader.gif') no-repeat center center;
 /* Indents =============================================================================== */
-    $main-indent: 20px;
-    $header-height: 68px;
-/* Grid Sections Variables =============================================================== */
-    $team-class: '.team';
+    $mainIndent: 20px;
 /* Sliders Variables ===================================================================== */
     $slider-class: '.owl';
-    $main-slider-class: '.main-slider';
-    $feedbacks-slider-class: '.feedbacks-slider';
-    $grid-slider-class: '.grid-slider';
 /* Button Variables ====================================================================== */
     $resp-size:16px;
     $btn-padding: .625*$resp-size 1.25*$resp-size;
     $btn-color: $white;
     $btn-font: 400 1rem/1.25rem $primary-font;
     $btn-background: $secondary-color;
-    $btn-scroll-top-class: '.bck-top';
-/* Links Variables ======================================================================= */
-    $link-color: $white;
-    $links-class: '.links'; // Used in Footer;
-    $contact-links-class: '.contact'; // Links with icons, same used in Footer;
 /* Breakpoints Variables ================================================================= */
-    $step1: 1440px;
-    $step2: 1240px;
-    $step3: 1100px;
-    $step4: 1025px;
-    $step5: 1024px;
-    $step6: 940px;
-    $step7: 800px;
-    $step8: 730px;
-    $step9: 600px;
-    $step10: 500px;
-    $step11: 440px;
-    $step12: 320px;
+    $step1: 1025px;
+    $step2: 1024px;
+    $step3: 960px;
+    $step4: 800px;
+    $step5: 700px;
+    $step6: 600px;
+    $step7: 500px;
 /* ======================================================================================= */

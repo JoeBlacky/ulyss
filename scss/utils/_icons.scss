@@ -1,0 +1,70 @@
+    $icnClass: '.icn';
+    $iconWidth: 100px;
+    $iconHeight: $iconWidth;
+/* Icons ================================================================================= */
+    #{$icnClass}{
+        &:before{
+            display: block;
+            width: $iconWidth;
+            height: $iconHeight;
+            margin: 0 auto $mainIndent;
+            font: 50px/#{$iconHeight} $icn-font;
+            border: 5px solid transparent;
+            border-top-width: 2px;
+            border-bottom-width: 2px;
+            @extend %border-radius-50;
+        }
+        &.like{
+            &:before{
+                content: '\E800';
+            }
+        }
+        &.wallet{
+            &:before{
+                content: '\E807';
+            }
+        }
+        &.eye{
+            &:before{
+                content: '\E804';
+            }
+        }
+        &.box{
+            &:before{
+                content: '\E80F';
+            }
+        }
+        &.star{
+            &:before{
+                content: '\E811';
+            }
+        }
+        &.usersGroup{
+            &:before{
+                content: '\E80B';
+            }
+        }
+        &.document{
+            &:before{
+                content: '\E80C';
+            }
+        }
+        &.phone{
+            &:before{
+                content: '\E80D';
+            }
+        }
+    }
+/* Media Queries ========================================================================= */
+    @media screen and (max-width: $step4){
+        $iconWidth: 80px;
+        $iconHeight: $iconWidth;
+        #{$icnClass}{
+            &:before{
+                width: $iconWidth;
+                height: $iconHeight;
+                font: 40px/#{$iconHeight} $icn-font;
+            }
+        }
+    }
+/* ======================================================================================= */

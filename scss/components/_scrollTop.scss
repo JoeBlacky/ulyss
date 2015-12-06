@@ -1,0 +1,40 @@
+/* scrollTop Variables =================================================================== */
+    $scrollButtonClass: '.scrollTop';
+    $scrollButtonWidth: 50px;
+    $scrollButtonHeight: 50px;
+/* scrollTop ============================================================================= */
+    #{$scrollButtonClass}{
+        background: $successColor;
+        text-align: center;
+        @extend %transition-normal-speed;
+        &:before{
+            content: '\E811';
+            display: block;
+            font: 20px/#{$scrollButtonHeight} $icn-font;
+            color: #FFF;
+        }
+    }
+/* Media Queries ========================================================================= */
+    @media screen and (min-width: $step1){
+        #{$scrollButtonClass}{
+            position: fixed;
+            width: $scrollButtonWidth;
+            height: $scrollButtonHeight;
+            right: -$scrollButtonWidth;
+            bottom: 0;
+            cursor: pointer;
+            opacity: .8;
+            &.active{
+                right: 0;
+            }
+            &:hover{
+                opacity: 1;
+            }
+        }
+    }
+    @media screen and (max-width: $step2){
+        #{$scrollButtonClass}{
+            margin: 0 -50%;
+        }
+    }
+/* ======================================================================================= */

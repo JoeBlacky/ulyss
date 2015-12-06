@@ -1,0 +1,35 @@
+    $workProcessSection: '.workProcess';
+/* workProcessSection ==================================================================== */
+    #{$workProcessSection}{
+        font-size: 0;
+        b{
+            font-size: 36px;
+        }
+        span{
+            display: block;
+            min-height: 190px;
+            margin: 0 0 $mainIndent/2;
+            border-bottom: 1px solid #FFF;
+        }
+        .itm{
+            vertical-align: top;
+            width: 20%;
+            margin: $mainIndent 2.5%;
+            font-size: 16px;
+            text-align: center;
+        }
+        #{$icnClass}{
+            &:before{
+                border-color: #FFF;
+            }
+        }
+    }
+/* Media Queries ========================================================================= */
+    @media screen and (max-width: $step6){
+        #{$workProcessSection}{
+            .itm{
+                width: 45%;
+            }
+        }
+    }
+/* ======================================================================================= */

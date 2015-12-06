@@ -1,0 +1,58 @@
+/* userBenefits ========================================================================== */
+    $userBenefitsSection: '.userBenefits';
+    #{$userBenefitsSection}{
+        color: #FF0;
+        text-align: center;
+        ul{
+            font-size: 0;
+        }
+        h4{
+            margin: 0 0 20px;
+            font: 400 75px/.9 $primary-font;
+        }
+        .formWrapper{
+            max-width: 100%;
+            form,
+            form + .messages{
+                margin: 0 auto;
+                max-width: $min-width;
+            }
+        }
+        .itm{
+            vertical-align: top;
+            width: 41.6667%;
+            margin: 0 4.1667% 40px;
+            font: 14px/1.7 'Arial';
+            color: #D4D9DA;
+        }
+        #{$icnClass}{
+            padding: 0 0 15px;
+            margin: 0 0 10px;
+            color: $attentionColor;
+            border-bottom: 1px solid #D4D9DA;
+            &:before{
+                border-color: $attentionColor;
+            }
+        }
+        .wallet{
+            &:before{
+                text-indent: 5px;
+            }
+        }
+    }
+/* Media Queries ========================================================================= */
+    @media screen and (max-width: $step4){
+        #{$userBenefitsSection}{
+            h4{
+                font-size: 50px;
+            }
+        }
+    }
+    @media screen and (max-width: $step7){
+        #{$userBenefitsSection}{
+            h4{
+                font-size: 40px;
+            }
+        }
+    }
+/* ======================================================================================= */

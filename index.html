@@ -11,25 +11,240 @@
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="/css/main.css" media="all" />
 
-    <script type="text/javascript" src="js/jquery1.10.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.1.10.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.owl.carousel.js"></script>
     <script type="text/javascript" src="js/main.min.js"></script>
 </head>
-<body class=" cms-index-index cms-home">
-    <noscript>
-        <div class="global-site-notice noscript">
-            <div class="notice-inner">
+<body>
+    <div class="page">
+        <noscript>
+            <div class="global-site-notice noscript">
+                <div class="notice-inner">
+                    <p>
+                        <strong>Скорее всего в вашем браузере отключён JavaScript.</strong>
+                        Вы должны включить JavaScript в вашем браузере, чтобы использовать все
+                        возможности этого сайта.
+                    </p>
+                </div>
+            </div>
+        </noscript>
+        <section class="heroImage">
+            <header>
+                <h1 class="sc">Часы Ulysse Nardin</h1>
+                <h2>Эксклюзивные, стильные, твои&#33; Доставка по всей Украине&#33;</h2>
+            </header>
+            <div class="formWrapper">
+                <h2>Акция!</h2>
+                <b>Закажите Ulysse Nardin</b>
+                <span class="sc">Со скидкой 50%&#33;</span>
+                <form id="heroImageForm" method="post" action="forms.php">
+                    <fieldset>
+                        <label for="heroImageFormName">Имя</label>
+                        <input id="heroImageFormName" type="text" name="name" placeholder="Имя"
+                            pattern="[А-я]{2,16}" title="Введите ваше имя в формате А-я" required />
+                        <label class="messages" id="nameValidationFailed">Введите ваше имя в формате
+                             А-я</label>
+                        <label for="heroImageFormPhone">Телефон</label>
+                        <input id="heroImageFormPhone" type="text" name="phone"
+                            placeholder="80ХХХХХХХХХ" pattern="^80\d{9}$"
+                            title="Введите контактный телефон в формате 80ХХХХХХХХХ" required />
+                        <label class="messages" id="phoneValidationFailed">Введите контактный
+                            телефон в формате 80ХХХХХХХХХ</label>
+                    </fieldset>
+                    <input type="submit" value="Оформить заказ" />
+                </form>
+            </div>
+            <div class="price">
+                <s class="sc">1150грн.</s>
+                <b>549грн.</b>
+            </div>
+        </section>
+        <section class="dark specialOffer">
+            <div class="itm timer">
+                <h3 class="ac">Внимание&#33;</h3>
+                <p>Количество часов по акции ограничено &#45; осталось синих
+                    <span class="ac">2</span> &#47; черных <span class="ac">3</span></p>
+            </div>
+            <div class="itm formWrapper">
+                <form id="specialOfferForm" method="post" action="forms.php">
+                    <fieldset>
+                        <label for="specialOfferFormName">Имя</label>
+                        <input id="specialOfferFormName" name="name" type="text" placeholder="Имя"
+                            pattern="[А-я]{2,16}" title="Введите ваше имя в формате А-я" required />
+                        <label for="specialOfferFormPhone">Телефон</label>
+                        <input id="specialOfferFormPhone" name="phone" type="text"
+                            placeholder="80ХХХХХХХХХ" pattern="^80\d{9}$" title="Введите контактный
+                            телефон в формате 80ХХХХХХХХХ" required />
+                    </fieldset>
+                    <input type="submit" value="Оформить заказ" />
+                </form>
+            </div>
+        </section>
+        <section class="products">
+            <ul class="productsGrid">
+                <li class="itm">
+                    <img src="/img/products/blue.jpg" alt="" width="245" height="420" />
+                    <h3 class="ttl">Часы Ulysse Nardin<br>Синие</h3>
+                    <ul class="spec">
+                        <li>Цвет: Синие</li>
+                        <li>Бренд: Ulysse Nardin</li>
+                        <li>Сборка: Бельгия</li>
+                        <li>Стекло: Сапфировое, износостойкое</li>
+                        <li>Механизм: Швейцария</li>
+                    </ul>
+                    <div class="price">
+                        <s>1150грн</s>
+                        <b>549грн</b>
+                    </div>
+                    <input type="button" value="Оформить заказ" class="winTrigger" />
+                </li>
+                <li class="itm">
+                    <img src="/img/products/black.jpg" alt="" width="245" height="420" />
+                    <h3 class="ttl">Часы Ulysse Nardin<br>Черные</h3>
+                    <ul class="spec">
+                        <li>Цвет: Черные</li>
+                        <li>Бренд: Ulysse Nardin</li>
+                        <li>Сборка: Бельгия</li>
+                        <li>Стекло: Сапфировое, износостойкое</li>
+                        <li>Механизм: Швейцария</li>
+                    </ul>
+                    <div class="price">
+                        <s>1150грн</s>
+                        <b>549грн</b>
+                    </div>
+                    <input type="button" value="Оформить заказ" class="winTrigger" />
+                </li>
+            </ul>
+            <div class="userCallingIn">
                 <p>
-                    <strong>Скорее всего в вашем браузере отключён JavaScript.</strong>
-                    Вы должны включить JavaScript в вашем браузере, чтобы использовать все возможности этого сайта.
+                    <b>Доставка по всей Украине</b>
+                    Оплата при получении!
+                </p>
+                <p>
+                    <b>Часы &#171;Ulysse Nardin&#187;</b>
+                    Яркие, дерзкие, твои&#33;
                 </p>
             </div>
+            <ul class="iconsGrid productFeatures">
+                <li class="itm icn star">Бренд: Ulysse Nardin</li>
+                <li class="itm icn star">Вид: Наручные часы</li>
+                <li class="itm icn star">Тип: Мужские</li>
+                <li class="itm icn star">Механизм: Швейцария</li>
+                <li class="itm icn star">Фирменный ремень из каучука</li>
+                <li class="itm icn star">Сапфировое, износостойкое стекло</li>
+                <li class="itm icn star">Водоустойчивость: 3 АТМ (влага и брызги)</li>
+            </ul>
+        </section>
+        <section class="dark userBenefits">
+            <h2 class="title">Что вы получите <b>покупая у нас</b></h2>
+            <ul class="iconsGrid">
+                <li class="itm">
+                    <h3 class="icn like">100% Гарантия качества</h3>
+                    <p>Если по каким либо причинам вам не понравится товар – вы получите деньги обратно. Возврат возможен не поздней 14 дней, после покупки.</p>
+                </li>
+                <li class="itm">
+                    <h3 class="icn wallet">Лучшая цена</h3>
+                    <p>Если вы найдете где-нибудь в интернете более низкую цену, то мы предоставим вам такую же! Мы гарантируем лучшую стоимость.</p>
+                </li>
+                <li class="itm">
+                    <h3 class="icn star">Эксклюзивный дизайн</h3>
+                    <p>Нашими покупателями, как правило, являются люди, для которых в первую очередь важны эксклюзивный и стильный дизайн.</p>
+                </li>
+                <li class="itm">
+                    <h3 class="icn box">Быстрая доставка</h3>
+                    <p>Быстрая доставка по Украине от 3 до 5 дней!</p>
+                </li>
+                <li class="itm">
+                    <h3 class="icn usersGroup">Круглосуточная поддержка</h3>
+                    <p>7 дней в неделю вы можете обратиться к нам за помощью или с вопросом и мы обязательно ответим.</p>
+                </li>
+            </ul>
+            <div class="formWrapper">
+                <h4>Успейте купить<br> по акции</h4>
+                <form id="userBenefitsForm" method="post" action="forms.php">
+                    <fieldset>
+                        <label for="userBenefitsFormName">Имя</label>
+                        <input id="userBenefitsFormName" name="name" type="text" placeholder="Имя"
+                            pattern="[А-я]{2,16}" title="Введите ваше имя в формате А-я" required />
+                        <label for="userBenefitsFormPhone">Телефон</label>
+                        <input id="userBenefitsFormPhone" name="phone" type="text"
+                            placeholder="80ХХХХХХХХХ" pattern="^80\d{9}$" title="Введите контактный
+                            телефон в формате 80ХХХХХХХХХ" required />
+                    </fieldset>
+                    <input type="submit" value="Оформить заказ" />
+                </form>
+            </div>
+        </section>
+        <section class="feedbacks">
+            <h2 class="title"><b>Отзывы</b> наших клиентов</h2>
+            <ul class="feedbacksSlider">
+                <li>
+                    <img src="img/feedbacks/1.jpg" alt="" width="100" height="100" />
+                    <b>Вика Митроченко</b>
+                    <q>Заказала себе! привезли вовремя! спасибо!</q>
+                </li>
+                <li>
+                    <img src="img/feedbacks/2.jpg" alt="" width="100" height="100" />
+                    <b>Александра Варварина</b>
+                    <q>Долго сомневалась в заказе через интернет, но потом решилась и заказала по акции. Ребята не подвели, часы и подарок доставили точно в оговоренные сроки. Всем советую.</q>
+                </li>
+                <li>
+                    <img src="img/feedbacks/3.jpg" alt="" width="100" height="100" />
+                    <b>Валерия Кузьмина</b>
+                    <q>СПАСИБО,часы дошли, правда на 2 дня позже. Удобно сидят на руке. В принципе довольна.</q>
+                </li>
+            </ul>
+        </section>
+        <section class="dark howWeWork">
+            <h2 class="title">Как мы <b>работаем</b></h2>
+            <ul class="workProcess">
+                <li class="itm">
+                    <span class="icn document">Вы оставляете заявку</span>
+                    <b>01</b>
+                </li>
+                <li class="itm">
+                    <span class="icn phone">Наш менеджер связывается с Вами для подверждения заказа</span>
+                    <b>02</b>
+                </li>
+                <li class="itm">
+                    <span class="icn box">Мы осуществляем доставку</span>
+                    <b>03</b>
+                </li>
+                <li class="itm">
+                    <span class="icn like">Вы получаете товар и оплачиваете на почте</span>
+                    <b>04</b>
+                </li>
+            </ul>
+        </section>
+        <section class="copy">
+            &copy; 2015
+        </section>
+        <div class="popUpWin">
+            <div class="itm content">
+                <p class="winTrigger close">x</p>
+                <h2>Часы Ulysse Nardin</h2>
+                <form id="poUpWinForm" method="post" action="forms.php">
+                    <fieldset>
+                        <label for="poUpWinFormName">Имя</label>
+                        <input id="poUpWinFormName" name="name" type="text" placeholder="Имя"
+                            pattern="[А-я]{2,16}" title="Введите ваше имя в формате А-я" required />
+                        <label for="poUpWinFormPhone">Телефон</label>
+                        <input id="poUpWinFormPhone" name="phone" type="text"
+                            placeholder="80ХХХХХХХХХ" pattern="^80\d{9}$" title="Введите контактный
+                            телефон в формате 80ХХХХХХХХХ" required />
+                    </fieldset>
+                    <input type="submit" value="Оформить заказ" />
+                </form>
+                <span>Наш менеджер свяжется с вами в течении 15 минут</span>
+            </div>
         </div>
-    </noscript>
-    <section class="heroImage">
-        <div class="mw">
-            <h1>Часы Ulysse Nardin</h1>
-            <h2>Эксклюзивные, стильные, твои! Доставка по всей Украине!</h2>
-        </div>
-    </section>
+        <p class="scrollTop"></p>
+    </div>
+    <div id="successMessage" class="messages success">
+        Спасибо за заказ! С вами свяжутся в близжайшее время.
+    </div>
+    <div id="errorMessage" class="messages">
+        Упс, что то пошло не так! Попробуйте еще раз.
+    </div>
 </body>
 </html>

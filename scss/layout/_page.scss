@@ -1,26 +1,111 @@
-/* Variables ============================================================================= */
-
 /* Common ================================================================================ */
     body{
+        max-width: $max-width;
+        overflow-x: hidden;
+        margin: 0 auto;
         font: 400 16px/1.25 $primary-font;
     }
     h1{
         font: 700 70px/1 $primary-font;
-        color: rgba($secondary-color,.5);
     }
-    .mw{
-        max-width: $main-width;
+    section{
+        margin: 0 -50%;
+        padding: 40px 50%;
+        .title{
+            margin: 0 0 2*$mainIndent;
+            text-align: center;
+            font: 400 65px/1.1 $primary-font-book;
+            b{
+                font-family: $primary-font;
+            }
+        }
+    }
+    .dark{
+        color: #FFF;
+        background: #000;
+        @include box-shadow(0 0 5px 0 #000);
+    }
+    .page{
+        position: relative;
         margin: 0 auto;
+        max-width: $main-width;
+        min-width: $min-width;
     }
-/* heroImage ============================================================================= */
-    $heroImageClass: '.heroImage';
-    $heroImageBackground: 'heroImage.jpg';
-    #{$heroImageClass}{
-        padding: 10px 0 0;
-        background: url('../img/#{$heroImageBackground}');
-        h2{
-            font: 38px/1 $primary-font-book;
-            color: #FFF;
+    .sc{ // Secondary-color
+        color: $secondary-color;
+    }
+    .ac{ // Attention-color
+        color: $attentionColor;
+    }
+    .itm{
+        @extend %inline-block-middle;
+    }
+    .copy{
+        padding: 20px 50%;
+        text-align: center;
+    }
+/* Messages ============================================================================== */
+    .messages{
+        max-height: 0;
+        padding: 0 10px;
+        margin: 0;
+        background: rgba($error-color, .4);
+        color: #FFF;
+        font: 16px/1.3 $primary-font;
+        overflow: hidden;
+        @extend %hidden;
+        @include transition(1s);
+        &.active{
+            max-height: 1000px;
+            padding: 10px;
+            border: 1px solid $error-color;
+            animation: 1s scaleUp;
+            -webkit-animation: 1s scaleUp;
+            @extend %visible;
+        }
+        &.success{
+            border-color: $successColor;
+            background: rgba($successColor, .4);
+        }
+    }
+    label{
+        &.messages{
+            display: block;
+            text-align: center;
+            cursor: default;
+            &.active{
+                margin: 0 0 20px;
+            }
+        }
+    }
+/* Media Queries ========================================================================= */
+    @media screen and (max-width: $step3){
+        section,
+        .copy{
+            padding: $mainIndent;
+            margin: 0;
+        }
+    }
+    @media screen and (max-width: $step4){
+        section{
+            .title{
+                font-size: 55px;
+            }
+        }
+    }
+    @media screen and (max-width: $step6){
+        section{
+            .title{
+                font-size: 45px;
+                margin: 0 0 $mainIndent;
+            }
+        }
+    }
+    @media screen and (max-width: $step7){
+        section{
+            .title{
+                font-size: 30px;
+            }
         }
     }
 /* ======================================================================================= */

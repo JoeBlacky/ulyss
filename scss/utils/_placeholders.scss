@@ -51,4 +51,12 @@
         left: 0;
         top: 0;
     }
+    %hidden{
+        opacity: 0;
+        visibility: hidden;
+    }
+    %visible{
+        opacity: 1;
+        visibility: visible;
+    }
 /* ======================================================================================= */

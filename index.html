@@ -13,6 +13,7 @@
 
     <script type="text/javascript" src="js/jquery.1.10.2.min.js"></script>
     <script type="text/javascript" src="js/jquery.owl.carousel.js"></script>
+    <script type="text/javascript" src="js/jquery.countdown.min.js"></script>
     <script type="text/javascript" src="js/main.min.js"></script>
 </head>
 <body>
@@ -60,24 +61,29 @@
             </div>
         </section>
         <section class="dark specialOffer">
-            <div class="itm timer">
-                <h3 class="ac">Внимание&#33;</h3>
-                <p>Количество часов по акции ограничено &#45; осталось синих
-                    <span class="ac">2</span> &#47; черных <span class="ac">3</span></p>
-            </div>
-            <div class="itm formWrapper">
-                <form id="specialOfferForm" method="post" action="forms.php">
-                    <fieldset>
-                        <label for="specialOfferFormName">Имя</label>
-                        <input id="specialOfferFormName" name="name" type="text" placeholder="Имя"
-                            pattern="[А-я]{2,16}" title="Введите ваше имя в формате А-я" required />
-                        <label for="specialOfferFormPhone">Телефон</label>
-                        <input id="specialOfferFormPhone" name="phone" type="text"
-                            placeholder="80ХХХХХХХХХ" pattern="^80\d{9}$" title="Введите контактный
-                            телефон в формате 80ХХХХХХХХХ" required />
-                    </fieldset>
-                    <input type="submit" value="Оформить заказ" />
-                </form>
+            <div class="content">
+                <div class="itm timerBlock">
+                    <h3 class="ac">Внимание&#33;</h3>
+                    <p>
+                        Количество часов по акции ограничено &#45; осталось синих
+                        <span class="ac">2</span> &#47; черных <span class="ac">3</span>
+                    </p>
+                    <div id="timer" class="countdown"></div>
+                </div>
+                <div class="itm formWrapper">
+                    <form id="specialOfferForm" method="post" action="forms.php">
+                        <fieldset>
+                            <label for="specialOfferFormName">Имя</label>
+                            <input id="specialOfferFormName" name="name" type="text" placeholder="Имя"
+                                pattern="[А-я]{2,16}" title="Введите ваше имя в формате А-я" required />
+                            <label for="specialOfferFormPhone">Телефон</label>
+                            <input id="specialOfferFormPhone" name="phone" type="text"
+                                placeholder="80ХХХХХХХХХ" pattern="^80\d{9}$" title="Введите контактный
+                                телефон в формате 80ХХХХХХХХХ" required />
+                        </fieldset>
+                        <input type="submit" value="Оформить заказ" />
+                    </form>
+                </div>
             </div>
         </section>
         <section class="products">

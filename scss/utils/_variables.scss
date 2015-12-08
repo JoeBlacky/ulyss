@@ -36,16 +36,15 @@
     $normal-speed: .3s;
     $slow-speed: .5s;
 /* Images ================================================================================ */
-    $loader-image: url('../images/ajax-loader.gif') no-repeat center center;
+    $loader-image: url('../img/ajax-loader.gif') no-repeat center center;
 /* Indents =============================================================================== */
     $mainIndent: 20px;
 /* Sliders Variables ===================================================================== */
     $slider-class: '.owl';
 /* Button Variables ====================================================================== */
-    $resp-size:16px;
-    $btn-padding: .625*$resp-size 1.25*$resp-size;
+    $btn-padding: 10px 20px;
     $btn-color: $white;
-    $btn-font: 400 1rem/1.25rem $primary-font;
+    $btn-font: 400 16px/1.25 $primary-font;
     $btn-background: $secondary-color;
 /* Breakpoints Variables ================================================================= */
     $step1: 1025px;

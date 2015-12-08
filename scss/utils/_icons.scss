@@ -19,39 +19,39 @@
                 content: '\E800';
             }
         }
+        &.phone{
+            &:before{
+                content: '\E802';
+            }
+        }
+        &.document{
+            &:before{
+                content: '\E803';
+            }
+        }
+        &.box{
+            &:before{
+                content: '\E804';
+            }
+        }
+        &.star{
+            &:before{
+                content: '\E805';
+            }
+        }
+        &.usersGroup{
+            &:before{
+                content: '\E806';
+            }
+        }
         &.wallet{
             &:before{
                 content: '\E807';
             }
         }
-        &.eye{
+        &.arrowUp{
             &:before{
-                content: '\E804';
-            }
-        }
-        &.box{
-            &:before{
-                content: '\E80F';
-            }
-        }
-        &.star{
-            &:before{
-                content: '\E811';
-            }
-        }
-        &.usersGroup{
-            &:before{
-                content: '\E80B';
-            }
-        }
-        &.document{
-            &:before{
-                content: '\E80C';
-            }
-        }
-        &.phone{
-            &:before{
-                content: '\E80D';
+                content: '\E808';
             }
         }
     }

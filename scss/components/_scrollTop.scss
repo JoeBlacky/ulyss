@@ -8,9 +8,9 @@
         text-align: center;
         @extend %transition-normal-speed;
         &:before{
-            content: '\E811';
+            content: '\E808';
             display: block;
-            font: 20px/#{$scrollButtonHeight} $icn-font;
+            font: 30px/#{$scrollButtonHeight} $icn-font;
             color: #FFF;
         }
     }

@@ -1,19 +1,26 @@
 /* specialOfferSection =================================================================== */
     $specialOfferSection: '.specialOffer';
-    $timerBlockWidth: 45.8334%;
+    $timerBlockWidth: 47.2528%;
     $specialOfferSectionFormWidth: 33.3334%;
     #{$specialOfferSection}{
         position: relative;
         background: #000;
         color: #FFF;
         font-size: 0;
-        > .itm{
-            vertical-align: top;
-        }
         h3{
             font: 700 85px/1 $primary-font;
         }
-        .timer{
+        p{
+            margin: 0 0 $mainIndent;
+        }
+        .content{
+            padding: $mainIndent;
+            border: 5px solid $attentionColor;
+        }
+        .itm{
+            vertical-align: top;
+        }
+        .timerBlock{
             width: $timerBlockWidth;
             margin: 0 (100% - $specialOfferSectionFormWidth - $timerBlockWidth) 0 0;
             font: 45px/.9 $primary-font;

@@ -1,8 +1,10 @@
 /* userBenefits ========================================================================== */
     $userBenefitsSection: '.userBenefits';
+    $userBenefitsSectionBackground: url('../img/userBenefits.jpg');
     #{$userBenefitsSection}{
         color: #FF0;
         text-align: center;
+        background-image: $userBenefitsSectionBackground;
         ul{
             font-size: 0;
         }

@@ -1,6 +1,11 @@
-    $workProcessSection: '.workProcess';
-/* workProcessSection ==================================================================== */
-    #{$workProcessSection}{
+    $howWeWorkSection: '.howWeWork';
+    $workProcessBlock: '.workProcess';
+    $howWeWorkSectionBackground: url('../img/howWeWork.jpg') no-repeat center center;
+/* howWeWorkSection ====================================================================== */
+    #{$howWeWorkSection}{
+        background-image: $howWeWorkSectionBackground;
+    }
+    #{$workProcessBlock}{
         font-size: 0;
         b{
             font-size: 36px;
@@ -26,7 +31,7 @@
     }
 /* Media Queries ========================================================================= */
     @media screen and (max-width: $step6){
-        #{$workProcessSection}{
+        #{$workProcessBlock}{
             .itm{
                 width: 45%;
             }

@@ -4,6 +4,7 @@ var app = {
         this.togglePopUpWin();
         this.showScrollButton();
         this.scrollTop();
+        this.timerCountdown();
     },
     initFeedbacksSlider : function() {
         feedbacksSlider = jQuery('.feedbacksSlider');
@@ -41,11 +42,9 @@ var app = {
         if (!nameValid) {
             app.showMessageBlock(nameField, '#nameValidationFailed');
         }
-        else if (!phoneValid) {
-            app.showMessageBlock(phoneField, '#phoneValidationFailed');
-        }
         else if (nameValid && phoneValid) {
             app.hideMessageBlock('#nameValidationFailed');
+            app.hideMessageBlock('#phoneValidationFailed');
             app.formRequest(form);
             nameField.val('');
             phoneField.val('');
@@ -101,6 +100,25 @@ var app = {
                 scrollButton.removeClass('active');
             }
         });
+    },
+    timerCountdown : function() {
+        var dateObj   = new Date();
+        var currentDay  = dateObj.getDay();
+        var monday      = dateObj.getDay();
+
+        var toEvent = new Date();
+
+        var days = 0 - dateObj.getDay();
+        var hours = 0 - dateObj.getHours();
+        var minutes = 0 - dateObj.getMinutes();
+        var seconds = 60 - dateObj.getSeconds();
+
+        toEvent = new Date(toEvent.setDate(toEvent.getDate()+3));
+        toEvent =  new Date(toEvent.setHours(toEvent.getHours()+12));
+        toEvent.setMinutes(minutes);
+        toEvent.setSeconds(seconds);
+
+        $('#timer').countdown({timestamp : toEvent});
     }
 }
 jQuery(function($){

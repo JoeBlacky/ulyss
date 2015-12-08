@@ -22,7 +22,7 @@
     }
     .dark{
         color: #FFF;
-        background: #000;
+        background: #000 no-repeat center center / cover;
         @include box-shadow(0 0 5px 0 #000);
     }
     .page{
@@ -85,6 +85,11 @@
             padding: $mainIndent;
             margin: 0;
         }
+        section{
+            .title{
+                margin: 0 0 $mainIndent;
+            }
+        }
     }
     @media screen and (max-width: $step4){
         section{
@@ -97,7 +102,6 @@
         section{
             .title{
                 font-size: 45px;
-                margin: 0 0 $mainIndent;
             }
         }
     }

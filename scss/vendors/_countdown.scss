@@ -1,0 +1,36 @@
+/* jQueryCountdown ======================================================================= */
+    $countdown: '.countdown';
+    $countBlockWidth: 75px;
+    $countBlockHeight: $countBlockWidth;
+    $countdownBlockBackground: url('../img/countdown.jpg') no-repeat center center;
+/* Common ================================================================================ */
+    #{$countdown}{
+        .countBlock{
+            width: $countBlockWidth;
+            height: $countBlockHeight;
+            margin: 0 10px 0 0;
+            background: $attentionColor $countdownBlockBackground;
+            text-align: center;
+            color: #4D3802;
+        }
+        .position{
+            position: relative;
+            overflow: hidden;
+        }
+        .digit{
+            vertical-align: top;
+            font: 700 54px/#{$countBlockHeight} $primary-font;
+            @include scale(.5);
+            @extend %hidden;
+            @extend %transition-fast-speed;
+            &.static{
+                @extend %visible;
+                @include scale(1);
+            }
+            + .digit{
+                position: absolute;
+                left: 0;
+            }
+        }
+    }
+/* ======================================================================================= */

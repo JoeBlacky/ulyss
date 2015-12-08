@@ -10,12 +10,13 @@
 }
 @font-face {
     font-family: 'bebasNeue';
-        src: url("../fonts/bebasNeueRegular.eot") format("eot");
+    src: url("../fonts/bebasNeueRegular.woff") format("woff");
+        /* src: url("../fonts/bebasNeueRegular.eot") format("eot");
         src: url("../fonts/bebasNeueRegular.woff") format("woff"),
              url("../fonts/bebasNeueRegular.eot?#iefix") format("embedded-opentype"),
              url("../fonts/bebasNeueRegular.ttf") format("truetype"),
              url("../fonts/bebasNeueRegular.otf") format("opentype"),
-             url("../fonts/bebasNeueRegular.svg") format("svg");
+             url("../fonts/bebasNeueRegular.svg") format("svg"); */
     font-weight: normal;
     font-style: normal;
 }

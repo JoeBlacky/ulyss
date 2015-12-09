@@ -4,9 +4,9 @@
     $specialOfferSectionFormWidth: 33.3334%;
     #{$specialOfferSection}{
         position: relative;
-        background: #000;
         color: #FFF;
         font-size: 0;
+        background-image: url('../img/specialOffer.jpg');
         h3{
             font: 700 85px/1 $primary-font;
         }

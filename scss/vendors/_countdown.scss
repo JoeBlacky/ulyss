@@ -2,7 +2,7 @@
     $countdown: '.countdown';
     $countBlockWidth: 75px;
     $countBlockHeight: $countBlockWidth;
-    $countdownBlockBackground: url('../img/countdown.jpg') no-repeat center center;
+    $countdownBlockBackground: url('../img/countdown.jpg') no-repeat center center / cover;
 /* Common ================================================================================ */
     #{$countdown}{
         .countBlock{
@@ -30,6 +30,35 @@
             + .digit{
                 position: absolute;
                 left: 0;
+            }
+        }
+    }
+/* Media Queries ========================================================================= */
+    @media screen and (max-width: $step3){
+        $countBlockWidth: 60px;
+        $countBlockHeight: $countBlockWidth;
+        #{$countdown}{
+            .countBlock{
+                width: $countBlockWidth;
+                height: $countBlockHeight;
+                margin: 0 5px;
+            }
+            .digit{
+                font: 700 40px/#{$countBlockHeight} $primary-font;
+            }
+        }
+    }
+    @media screen and (max-width: $step7){
+        $countBlockWidth: 50px;
+        $countBlockHeight: $countBlockWidth;
+        #{$countdown}{
+            .countBlock{
+                width: $countBlockWidth;
+                height: $countBlockHeight;
+                margin: 0 2px;
+            }
+            .digit{
+                font: 700 30px/#{$countBlockHeight} $primary-font;
             }
         }
     }

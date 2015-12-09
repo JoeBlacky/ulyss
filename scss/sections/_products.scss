@@ -80,6 +80,11 @@
         }
     }
     @media screen and (max-width: $step7){
+        .productsGrid{
+            img{
+                width: 50%;
+            }
+        }
         .userCallingIn{
             font-size: 30px;
         }

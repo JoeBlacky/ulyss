@@ -30,4 +30,50 @@
             padding-top: 10px;
         }
     }
+/* Media Queries ========================================================================= */
+    @media screen and (max-width: $step3){
+        #{$specialOfferSection}{
+            .timerBlock{
+                font-size: 40px;
+                h3{
+                    font-size: 75px;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: $step5){
+        #{$specialOfferSection}{
+            text-align: center;
+            .timerBlock{
+                margin: 0 0 $mainIndent;
+                h3{
+                    margin: 0 0 $mainIndent;
+                }
+            }
+            .timerBlock,
+            .formWrapper{
+                width: 100%;
+            }
+        }
+    }
+    @media screen and (max-width: $step6){
+        #{$specialOfferSection}{
+            .timerBlock{
+                font-size: 30px;
+                h3{
+                    font-size: 50px;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: $step6){
+        #{$specialOfferSection}{
+            .timerBlock{
+                font-size: 30px;
+                h3{
+                    font-size: 50px;
+                }
+            }
+        }
+    }
 /* ======================================================================================= */

@@ -12,11 +12,15 @@ var app = {
             var currency = e.pageConfig.currency;
             var regularPrice = e.pageConfig.price + currency;
             var specialPrice = e.pageConfig.specialPrice + currency;
+            var blueWatchQty = e.quantity.blue;
+            var blackWatchQty = e.quantity.black;
 
             $('.price').each(function(){
                 $(this).find('s').html(regularPrice);
                 $(this).find('b').html(specialPrice);
             });
+            $('.qty').find('.blue').html(blueWatchQty);
+            $('.qty').find('.black').html(blackWatchQty);
         });
     },
     initFeedbacksSlider : function() {
@@ -28,7 +32,8 @@ var app = {
                 slideSpeed: 500,
                 transitionStyle: 'backSlide',
                 mouseDrag: false,
-                autoHeight: true
+                autoHeight: true,
+                lazyLoad : true
             });
         }
     },
@@ -61,9 +66,6 @@ var app = {
                 app.showMessageBlock(nameField, '#nameValidationFailed');
             }
         }
-       /* else if (nameValid) {
-            app.hideMessageBlock('#nameValidationFailed');
-        }*/
         else if (!phoneValid) {
             if (phoneMessageActive) {
                 return false;
@@ -71,9 +73,6 @@ var app = {
                 app.showMessageBlock(phoneField, '#phoneValidationFailed');
             }
         }
-        /*else if (phoneValid) {
-            app.hideMessageBlock('#phoneValidationFailed');
-        }*/
         else if (nameValid && phoneValid) {
             app.formRequest(form);
             nameField.val('');
@@ -105,13 +104,6 @@ var app = {
     },
     hideMessageBlock : function(blockId) {
         $(blockId).removeClass('active');
-    },
-    getMessageBlock : function(form, blockId) {
-        form.after($(blockId));
-        $(blockId).addClass('active');
-        setTimeout(function(){
-            $(blockId).removeClass('active');
-        }, 5000);
     },
     scrollTop : function() {
         $('.scrollTop').click(function(){

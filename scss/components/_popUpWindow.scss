@@ -1,4 +1,9 @@
 /* popUpWindow =========================================================================== */
+    $closeButtonHeight: 35px;
+    $closeButtonWidth: $closeButtonHeight;
+    $popUpBorderWidth: 5px;
+    $popUpBorderColor: #FFF;
+/* popUpWindow =========================================================================== */
     .popUpWin{
         position: fixed;
         width: 100%;
@@ -36,31 +41,31 @@
             }
         }
         span{
+            display: block;
+            margin: 0 0 $mainIndent;
             color: $attentionColor;
         }
         .content{
             position: relative;
-            background: $FADED_BLUE;
+            max-height: 100%;
             max-width: $min-width;
+            overflow-x: auto;
             padding: 20px;
+            background: $FADED_BLUE;
             font-size: 16px;
             color: #FFF;
-            border: 5px solid #B2B5B9;
+            border: $popUpBorderWidth solid $popUpBorderColor;
             @include scale(.8);
-            @include border-radius(1px);
             @extend %transition-normal-speed;
+            @extend %border-box;
         }
         .close{
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            top: -20px;
-            right: -20px;
-            background: #B2B5B9;
-            cursor: pointer;
-            color: #FFF;
-            font: 700 20px/40px $primary-font;
-            @extend %border-radius-50;
+            background: $error-color;
+            @extend %btn;
+            @extend %transition-normal-speed;
+            &:hover{
+                background: lighten($error-color, 5%);
+            }
         }
     }
 /* ======================================================================================= */

@@ -56,9 +56,9 @@
             <div class="content">
                 <div class="itm timerBlock">
                     <h3 class="ac">Внимание&#33;</h3>
-                    <p>
+                    <p class="qty">
                         Количество часов по акции ограничено &#45; осталось синих
-                        <span class="ac">2</span> &#47; черных <span class="ac">3</span>
+                        <span class="ac blue">2</span> &#47; черных <span class="ac black">3</span>
                     </p>
                     <div id="timer" class="countdown"></div>
                 </div>
@@ -177,17 +177,17 @@
             <h2 class="title"><b>Отзывы</b> наших клиентов</h2>
             <ul class="feedbacksSlider">
                 <li>
-                    <img src="img/feedbacks/1.jpg" alt="" width="100" height="100" />
+                    <img class="lazyOwl" src="img/ajaxLoader.gif" data-src="img/feedbacks/1.jpg" alt="" width="100" height="100" />
                     <b>Вика Митроченко</b>
                     <q>Заказала себе! привезли вовремя! спасибо!</q>
                 </li>
                 <li>
-                    <img src="img/feedbacks/2.jpg" alt="" width="100" height="100" />
+                    <img class="lazyOwl" src="img/ajaxLoader.gif" data-src="img/feedbacks/2.jpg" alt="" width="100" height="100" />
                     <b>Александра Варварина</b>
                     <q>Долго сомневалась в заказе через интернет, но потом решилась и заказала по акции. Ребята не подвели, часы и подарок доставили точно в оговоренные сроки. Всем советую.</q>
                 </li>
                 <li>
-                    <img src="img/feedbacks/3.jpg" alt="" width="100" height="100" />
+                    <img class="lazyOwl" src="img/ajaxLoader.gif" data-src="img/feedbacks/3.jpg" alt="" width="100" height="100" />
                     <b>Валерия Кузьмина</b>
                     <q>СПАСИБО,часы дошли, правда на 2 дня позже. Удобно сидят на руке. В принципе довольна.</q>
                 </li>
@@ -215,11 +215,10 @@
             </ul>
         </section>
         <section class="copy">
-            &copy; 2015
+            <h6>&copy; 2015</h6>
         </section>
         <div class="popUpWin">
             <div class="itm content">
-                <p class="winTrigger close">x</p>
                 <h2>Часы Ulysse Nardin</h2>
                 <form id="poUpWinForm" method="post" action="forms.php">
                     <fieldset>
@@ -234,6 +233,7 @@
                     <input type="submit" value="Оформить заказ" />
                 </form>
                 <span>Наш менеджер свяжется с вами в течении 15 минут</span>
+                <p class="winTrigger close">Закрыть</p>
             </div>
         </div>
         <p class="scrollTop"></p>
@@ -244,9 +244,6 @@
     <div id="errorMessage" class="messages">
         Упс, что то пошло не так! Попробуйте еще раз.
     </div>
-<script type="text/javascript" src="js/jquery.1.10.2.min.js"></script>
-<script type="text/javascript" src="js/jquery.owl.carousel.js"></script>
-<script type="text/javascript" src="js/jquery.countdown.min.js"></script>
-<script type="text/javascript" src="js/main.min.js"></script>
+    <script type="text/javascript" src="js/main.min.js" defer></script>
 </body>
 </html>

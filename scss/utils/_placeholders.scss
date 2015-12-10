@@ -34,14 +34,11 @@
         @include inline-block(bottom);
     }
     %btn{
-        padding: $btn-padding;
-        font: $btn-font;
-        color: $btn-color;
+        padding: 10px 20px;
+        background: $secondary-color;
+        font: 700 20px/28px $primary-font;
+        color: #FFF;
         cursor: pointer;
-        border: 0;
-        text-align: center;
-        background: $btn-background;
-        @extend %transition-normal-speed;
         @extend %inline-block-middle;
     }
     %overlay{

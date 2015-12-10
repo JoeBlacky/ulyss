@@ -1,7 +1,11 @@
 {
     "pageConfig": {
         "currency": "грн",
-        "price": 1150,
+        "price": 1100,
         "specialPrice": 549
+    },
+    "quantity": {
+        "blue": 11,
+        "black": 8
     }
 }

@@ -43,12 +43,7 @@
         &[type="button"]{
             width: auto;
             height: auto;
-            padding: 10px 20px;
-            background: $secondary-color;
-            font: 700 20px/28px $primary-font;
-            color: #FFF;
-            cursor: pointer;
-            @extend %inline-block-middle;
+            @extend %btn;
             &:hover{
                 background: $successColor;
             }

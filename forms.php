@@ -1,2 +1,7 @@
-<?php echo $_POST["name"]; ?><br>
-<?php echo $_POST["phone"]; ?>
+<?php
+    $to = "gooddealthanks@gmail.com";
+    $subject = "New order";
+    $txt = "Name: " . $_POST["name"] . " \n " .  "Phone: " . $_POST["phone"] ;
+
+    mail($to,$subject,$txt);
+?>

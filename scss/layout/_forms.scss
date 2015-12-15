@@ -2,6 +2,9 @@
     form{
         &:before{
             content: '';
+            padding: $mainIndent $mainIndent 0;
+            left: (-$mainIndent);
+            top: (-$mainIndent);
             background: rgba(#FFF, .7) url('../img/ajaxLoader.gif') no-repeat center center;
             @extend %overlay;
             @extend %hidden;

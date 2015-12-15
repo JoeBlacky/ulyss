@@ -6,14 +6,17 @@ var app = {
         this.showScrollButton();
         this.scrollTop();
         this.timerCountdown();
+        this.checkCopyDate();
     },
     pageConfig : function() {
         $.getJSON('/pageConfig.json', function(e){
-            var currency = e.pageConfig.currency;
-            var regularPrice = e.pageConfig.price + currency;
-            var specialPrice = e.pageConfig.specialPrice + currency;
+            var currency = e.price.currency;
+            var regularPrice = e.price.price + currency;
+            var specialPrice = e.price.specialPrice + currency;
             var blueWatchQty = e.quantity.blue;
             var blackWatchQty = e.quantity.black;
+            var brandName = e.brand.name;
+            var brandSlogan = e.brand.slogan;
 
             $('.price').each(function(){
                 $(this).find('s').html(regularPrice);
@@ -21,6 +24,8 @@ var app = {
             });
             $('.qty').find('.blue').html(blueWatchQty);
             $('.qty').find('.black').html(blackWatchQty);
+            $('.slogan').html(brandSlogan);
+            $('.brandName').html(brandName);
         });
     },
     initFeedbacksSlider : function() {
@@ -111,17 +116,15 @@ var app = {
         });
     },
     showScrollButton : function() {
-        $(window).scroll(function(){
-            var windowHeight = window.innerHeight;
-            var topOffset = window.pageYOffset;
-            var scrollButton = $('.scrollTop');
+        var windowHeight = window.innerHeight;
+        var topOffset = window.pageYOffset;
+        var scrollButton = $('.scrollTop');
 
-            if (topOffset > windowHeight) {
-                scrollButton.addClass('active');
-            } else {
-                scrollButton.removeClass('active');
-            }
-        });
+        if (topOffset > windowHeight) {
+            scrollButton.addClass('active');
+        } else {
+            scrollButton.removeClass('active');
+        }
     },
     timerCountdown : function() {
         var dateObj   = new Date();
@@ -137,6 +140,13 @@ var app = {
         toEvent.setMinutes(minutes);
         toEvent.setSeconds(seconds);
         $('#timer').countdown({timestamp : toEvent});
+    },
+    checkCopyDate : function () {
+        var initialYear = 2015;
+        var currentYear = new Date().getFullYear();
+        if (currentYear > initialYear ) {
+            $('.copy').find('h6').html('&copy; ' + initialYear + " - "+ currentYear);
+        }
     }
 }
 jQuery(function($){
@@ -147,5 +157,9 @@ jQuery(function($){
 
         app.validateForm(form);
         e.preventDefault();
+    });
+
+    $(window).scroll(function(){
+        app.showScrollButton();
     });
 });

@@ -1,5 +1,5 @@
 {
-    "pageConfig": {
+    "price": {
         "currency": "грн",
         "price": 1100,
         "specialPrice": 549
@@ -7,5 +7,9 @@
     "quantity": {
         "blue": 11,
         "black": 8
+    },
+    "brand": {
+        "name": "Ulysse Nardin",
+        "slogan": "Эксклюзивные, стильные, твои&#33"
     }
 }

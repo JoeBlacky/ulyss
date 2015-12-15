@@ -88,6 +88,13 @@
             }
         }
     }
+/* Used in pageConfig ==================================================================== */
+    i{
+        &.slogan,
+        &.brandName{
+            font-style: normal;
+        }
+    }
 /* Media Queries ========================================================================= */
     @media screen and (max-width: $step3){
         section,

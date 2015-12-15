@@ -1,7 +1,7 @@
 <?php
-    $to = "gooddealthanks@gmail.com";
+    $to = "fisunovartem@gmail.com";
     $subject = "New order";
-    $txt = "Name: " . $_POST["name"] . " \n " .  "Phone: " . $_POST["phone"] ;
+    $txt = "Name: " . $_POST["name"] . " \n" .  "Phone: " . $_POST["phone"] ;
 
     mail($to,$subject,$txt);
 ?>

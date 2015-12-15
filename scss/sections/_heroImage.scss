@@ -29,7 +29,7 @@
         }
         .price{
             max-width: 280px;
-            margin: 0 auto;
+            margin: -100px auto 0;
             color: #FFF;
             font-size: 106px;
             s{
@@ -65,9 +65,18 @@
             }
         }
     }
+    @media screen and (max-width: $step3){
+        #{$heroImageSection}{
+            .price{
+                margin: -80px 0 0;
+                text-align: center;
+            }
+        }
+    }
     @media screen and (max-width: $step6){
         #{$heroImageSection}{
             text-align: center;
+            .price,
             .formWrapper{
                 margin: 0 auto $mainIndent;
             }

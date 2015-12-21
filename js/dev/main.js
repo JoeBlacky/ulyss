@@ -1,20 +1,21 @@
 var app = {
     init : function(config) {
+        var promoDuration = 10;
         this.pageConfig();
         this.initFeedbacksSlider();
         this.togglePopUpWin();
         this.showScrollButton();
         this.scrollTop();
-        this.timerCountdown();
+        this.timerCountdown(promoDuration);
         this.checkCopyDate();
+        this.updateQuantity(promoDuration);
+        this.checkVisibility();
     },
     pageConfig : function() {
         $.getJSON('/pageConfig.json', function(e){
             var currency = e.price.currency;
             var regularPrice = e.price.price + currency;
             var specialPrice = e.price.specialPrice + currency;
-            var blueWatchQty = e.quantity.blue;
-            var blackWatchQty = e.quantity.black;
             var brandName = e.brand.name;
             var brandSlogan = e.brand.slogan;
 
@@ -22,8 +23,6 @@ var app = {
                 $(this).find('s').html(regularPrice);
                 $(this).find('b').html(specialPrice);
             });
-            $('.qty').find('.blue').html(blueWatchQty);
-            $('.qty').find('.black').html(blackWatchQty);
             $('.slogan').html(brandSlogan);
             $('.brandName').html(brandName);
         });
@@ -59,7 +58,7 @@ var app = {
     validateForm : function(form) {
         var nameField = form.find($('input[name="name"]'));
         var phoneField= form.find($('input[name="phone"]'));
-        var nameValid = nameField.val().match(/[А-я]{2,}/);
+        var nameValid = nameField.val().match(/[А-я]{2,32}/);
         var phoneValid = phoneField.val().match(/^80\d{9}$/);
         var nameMessageActive = nameField.next('label').hasClass('active');
         var phoneMessageActive = phoneField.next('label').hasClass('active');
@@ -126,27 +125,36 @@ var app = {
             scrollButton.removeClass('active');
         }
     },
-    timerCountdown : function() {
-        var dateObj   = new Date();
-        var toEvent = new Date();
-
-        var days = 0 - dateObj.getDay();
-        var hours = 0 - dateObj.getHours();
-        var minutes = 0 - dateObj.getMinutes();
-        var seconds = 60 - dateObj.getSeconds();
-
-        toEvent = new Date(toEvent.setDate(toEvent.getDate()+3));
-        toEvent = new Date(toEvent.setHours(toEvent.getHours()+12));
-        toEvent.setMinutes(minutes);
-        toEvent.setSeconds(seconds);
-        $('#timer').countdown({timestamp : toEvent});
+    timerCountdown : function(promoDuration) {
+        var eventDate = new Date().getTime() + promoDuration*24*60*60*1000;
+        $('#timer').countdown({
+            timestamp: eventDate
+        });
     },
-    checkCopyDate : function () {
+    checkCopyDate : function() {
         var initialYear = 2015;
         var currentYear = new Date().getFullYear();
         if (currentYear > initialYear ) {
             $('.copy').find('h6').html('&copy; ' + initialYear + " - "+ currentYear);
         }
+    },
+    updateQuantity : function(promoDuration) {
+        var stock = 2;
+        var promoTime = promoDuration;
+
+        var currentDay = new Date().getDate();
+        var promoStart = new Date('2015-12-21');
+        var currentDate = new Date(new Date().toJSON().slice(0,10));
+        var promoEnd = new Date(new Date().setDate(promoStart.getDate() + promoTime));
+
+        var quantityBlock = $('.qty');
+        var blueWatch = quantityBlock.find('.blue');
+        var blackWatch = quantityBlock.find('.black');
+        var blueWatchQty = blueWatch.html(Math.ceil(stock*1.3*(promoEnd.getDate() - currentDay)));
+        var blackWatchQty = blackWatch.html(Math.ceil(stock*(promoEnd.getDate() - currentDay)));
+    },
+    checkVisibility : function() {
+        $('.hidden:in-viewport').addClass('visible');
     }
 }
 jQuery(function($){
@@ -161,5 +169,6 @@ jQuery(function($){
 
     $(window).scroll(function(){
         app.showScrollButton();
+        app.checkVisibility();
     });
 });

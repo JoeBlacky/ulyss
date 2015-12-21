@@ -47,6 +47,23 @@
             font-weight: 400;
         }
     }
+    .hidden{
+        $elements: 8;
+        @extend %hidden;
+        @extend %transition-slow-speed;
+        @include translate(0,$mainIndent*2);
+        @for $i from 1 through $elements {
+            &:nth-child(#{$i}) {
+                -webkit-transition-delay: ($fast-speed * $i);
+                -moz-transition-delay: ($fast-speed * $i);
+                transition-delay: ($fast-speed * $i);
+            }
+          }
+        &.visible{
+            @extend %visible;
+            @include translate(0,0);
+        }
+    }
 /* Messages ============================================================================== */
     .messages{
         position: absolute;

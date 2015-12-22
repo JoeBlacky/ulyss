@@ -11,6 +11,9 @@ var app = {
         this.updateQuantity(promoDuration);
         this.checkVisibility();
     },
+    checkJS : function() {
+        $('body').removeClass('noJS');
+    },
     pageConfig : function() {
         $.getJSON('/pageConfig.json', function(e){
             var currency = e.price.currency;

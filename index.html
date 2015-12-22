@@ -13,13 +13,15 @@
     <link rel="stylesheet" type="text/css" href="css/main.css" media="all" />
 </head>
 <body>
-    <div class="page">
+    <div class="page noJS">
         <noscript>
-            <p class="messages active noJS">
-                <b>Скорее всего в вашем браузере отключён JavaScript.</b>
-                Вы должны включить JavaScript в вашем браузере, чтобы использовать все
-                возможности этого сайта.
-            </p>
+            <div class="popUpWin active">
+                <p class="itm content">
+                    <b>Скорее всего в вашем браузере отключён JavaScript.</b>
+                    Вы должны включить JavaScript в вашем браузере, чтобы использовать все
+                    возможности этого сайта.
+                </p>
+            </div>
         </noscript>
         <section class="heroImage">
             <header>
@@ -175,7 +177,7 @@
         </section>
         <section class="feedbacks">
             <h2 class="title"><b>Отзывы</b> наших клиентов</h2>
-            <ul class="feedbacksSlider">
+            <ul class="slider feedbacksSlider">
                 <li>
                     <img class="lazyOwl" src="img/ajaxLoader.gif" data-src="img/feedbacks/2.jpg" alt="" width="100" height="100" />
                     <b>Александр Варварин</b>

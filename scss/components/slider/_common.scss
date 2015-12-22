@@ -1,4 +1,12 @@
 /* Common ================================================================================ */
+    .slider{
+        > li{
+            display: none;
+            &:first-child{
+                display: block;
+            }
+        }
+    }
     .owl{
         &-carousel{
             display: none;

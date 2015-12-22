@@ -26,7 +26,6 @@
         @include box-shadow(0 0 5px 0 #000);
     }
     .page{
-        width: 100%;
         position: relative;
         margin: 0 auto;
         max-width: $main-width;
@@ -65,6 +64,12 @@
             @include translate(0,0);
         }
     }
+    .noJS{
+        .scroll-visible{
+            @extend %visible;
+            @include translate(0,0);
+        }
+    }
 /* Messages ============================================================================== */
     .messages{
         position: absolute;
@@ -90,10 +95,6 @@
         &.success{
             border-color: $successColor;
             background: rgba($successColor, .4);
-        }
-        &.noJS{
-            padding: $mainIndent 50%;
-            margin: 0 -50%;
         }
     }
     label{

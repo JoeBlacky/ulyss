@@ -22,7 +22,7 @@
     }
     .dark{
         color: #FFF;
-        background: red no-repeat center center / cover;
+        background: #000 no-repeat center center / cover;
         @include box-shadow(0 0 5px 0 #000);
     }
     .page{
@@ -116,7 +116,7 @@
 /* Media Queries ========================================================================= */
     @media screen and (max-width: $step3){
         .page{
-            overflow: hidden;
+            width: 100%;
         }
         section,
         .copy{

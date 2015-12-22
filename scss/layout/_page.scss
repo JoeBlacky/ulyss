@@ -1,5 +1,6 @@
 /* Common ================================================================================ */
     body{
+        width: 100%;
         max-width: $max-width;
         overflow-x: hidden;
         margin: 0 auto;
@@ -47,7 +48,7 @@
             font-weight: 400;
         }
     }
-    .hidden{
+    .scroll-visible{
         $elements: 8;
         @extend %hidden;
         @extend %transition-slow-speed;
@@ -59,7 +60,7 @@
                 transition-delay: ($fast-speed * $i);
             }
           }
-        &.visible{
+        &.active{
             @extend %visible;
             @include translate(0,0);
         }

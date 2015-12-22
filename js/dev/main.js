@@ -154,7 +154,7 @@ var app = {
         var blackWatchQty = blackWatch.html(Math.ceil(stock*(promoEnd.getDate() - currentDay)));
     },
     checkVisibility : function() {
-        $('.hidden:in-viewport').addClass('visible');
+        $('.scroll-visible:in-viewport').addClass('active');
     }
 }
 jQuery(function($){

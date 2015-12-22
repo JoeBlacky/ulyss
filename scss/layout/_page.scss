@@ -116,7 +116,7 @@
 /* Media Queries ========================================================================= */
     @media screen and (max-width: $step3){
         .page{
-            width: 100%;
+            overflow: hidden;
         }
         section,
         .copy{

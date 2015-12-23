@@ -4,12 +4,13 @@
         "price": 1100,
         "specialPrice": 549
     },
-    "quantity": {
-        "blue": 11,
-        "black": 8
-    },
     "brand": {
         "name": "Ulysse Nardin",
         "slogan": "Эксклюзивные, стильные, твои&#33"
-    }
+    },
+    "schedule": [
+        {"promoStart": "2015-12-20T00:00:00", "promoEnd": "2015-12-31T23:59:59"},
+        {"promoStart": "2016-01-01T00:00:00", "promoEnd": "2016-01-15T23:59:59"},
+        {"promoStart": "2016-01-16T00:00:00", "promoEnd": "2016-01-30T23:59:59"}
+    ]
 }

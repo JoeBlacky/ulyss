@@ -1,18 +1,14 @@
 var app = {
     init : function(config) {
-        var promoDuration = 10;
         this.pageConfig();
         this.initFeedbacksSlider();
         this.togglePopUpWin();
         this.showScrollButton();
         this.scrollTop();
-        this.timerCountdown(promoDuration);
+        this.timerCountdown();
         this.checkCopyDate();
-        this.updateQuantity(promoDuration);
         this.checkVisibility();
-    },
-    checkJS : function() {
-        $('body').removeClass('noJS');
+        this.checkJS();
     },
     pageConfig : function() {
         $.getJSON('/pageConfig.json', function(e){
@@ -128,33 +124,42 @@ var app = {
             scrollButton.removeClass('active');
         }
     },
-    timerCountdown : function(promoDuration) {
-        var eventDate = new Date().getTime() + promoDuration*24*60*60*1000;
-        $('#timer').countdown({
-            timestamp: eventDate
-        });
-    },
-    checkCopyDate : function() {
-        var initialYear = 2015;
-        var currentYear = new Date().getFullYear();
-        if (currentYear > initialYear ) {
-            $('.copy').find('h6').html('&copy; ' + initialYear + " - "+ currentYear);
-        }
-    },
-    updateQuantity : function(promoDuration) {
+    timerCountdown : function() {
         var stock = 2;
-        var promoTime = promoDuration;
-
-        var currentDay = new Date().getDate();
-        var promoStart = new Date('2015-12-21');
-        var currentDate = new Date(new Date().toJSON().slice(0,10));
-        var promoEnd = new Date(new Date().setDate(promoStart.getDate() + promoTime));
-
         var quantityBlock = $('.qty');
         var blueWatch = quantityBlock.find('.blue');
         var blackWatch = quantityBlock.find('.black');
-        var blueWatchQty = blueWatch.html(Math.ceil(stock*1.3*(promoEnd.getDate() - currentDay)));
-        var blackWatchQty = blackWatch.html(Math.ceil(stock*(promoEnd.getDate() - currentDay)));
+
+        $.getJSON('/pageConfig.json', function(data){
+            var schedule = data.schedule;
+            console.log(schedule);
+            for(var i=0; i<schedule.length; i++){
+                var promoStart = new Date(schedule[i].promoStart);
+                var promoEnd = new Date(schedule[i].promoEnd);
+                var currentDate = new Date();
+
+                if(promoEnd > currentDate && currentDate >= promoStart ){
+                    $('#timer').countdown({
+                        timestamp: promoEnd
+                    });
+                    blueWatch.html(Math.ceil(stock*1.3*(promoEnd.getDate() + 1 - currentDate.getDate())));
+                    blackWatch.html(Math.ceil(stock*(promoEnd.getDate() + 1 - currentDate.getDate())));
+                }
+            }
+        });
+    },
+    checkJS : function() {
+        $('.page').removeClass('noJS');
+    },
+    checkCopyDate : function() {
+        var initialYear = 2015;
+        var copyTitle = document.title;
+        var currentYear = new Date().getFullYear();
+        if (currentYear > initialYear ) {
+            $('.copy').find('h6').html("&copy;&nbsp;" + initialYear + " - " + currentYear + "&nbsp;" + copyTitle);
+        } else {
+            $('.copy').find('h6').html("&copy;&nbsp;" + initialYear + "&nbsp;" + copyTitle);
+        }
     },
     checkVisibility : function() {
         $('.scroll-visible:in-viewport').addClass('active');
@@ -175,3 +180,46 @@ jQuery(function($){
         app.checkVisibility();
     });
 });
+
+
+function getTimeRemaining(endtime) {
+  var t = Date.parse(endtime) - Date.now();
+  var seconds = Math.floor((t / 1000) % 60);
+  var minutes = Math.floor((t / 1000 / 60) % 60);
+  var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+  var days = Math.floor(t / (1000 * 60 * 60 * 24));
+  return {
+    'total': t,
+    'days': days,
+    'hours': hours,
+    'minutes': minutes,
+    'seconds': seconds
+  };
+}
+
+function initializeClock(id, endtime) {
+  var clock = document.getElementById(id);
+  var days = clock.querySelector('.days');
+  var hours = clock.querySelector('.hours');
+  var minutes = clock.querySelector('.minutes');
+  var seconds = clock.querySelector('.seconds');
+
+  function updateClock() {
+    var t = getTimeRemaining(endtime);
+
+    days.innerHTML = ('0' + t.days).slice(-2);
+    hours.innerHTML = ('0' + t.hours).slice(-2);
+    minutes.innerHTML = ('0' + t.minutes).slice(-2);
+    seconds.innerHTML = ('0' + t.seconds).slice(-2);
+
+    if (t.total <= 0) {
+      clearInterval(timeinterval);
+    }
+  }
+
+  updateClock();
+  var timeinterval = setInterval(updateClock, 1000);
+}
+
+var deadline = new Date('2015-12-31');
+//initializeClock('timer', deadline);

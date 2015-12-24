@@ -34,20 +34,6 @@
         }
     }
 /* Media Queries ========================================================================= */
-    @media screen and (max-width: $step3){
-        $countBlockWidth: 60px;
-        $countBlockHeight: $countBlockWidth;
-        #{$countdown}{
-            .countBlock{
-                width: $countBlockWidth;
-                height: $countBlockHeight;
-                margin: 0 5px;
-            }
-            .digit{
-                font: 700 40px/#{$countBlockHeight} $primary-font;
-            }
-        }
-    }
     @media screen and (max-width: $step7){
         $countBlockWidth: 50px;
         $countBlockHeight: $countBlockWidth;

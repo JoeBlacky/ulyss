@@ -129,10 +129,12 @@ var app = {
         var quantityBlock = $('.qty');
         var blueWatch = quantityBlock.find('.blue');
         var blackWatch = quantityBlock.find('.black');
+        var whiteWatch = quantityBlock.find('.white');
+        var cyanWatch = quantityBlock.find('.cyan');
 
         $.getJSON('/pageConfig.json', function(data){
             var schedule = data.schedule;
-            console.log(schedule);
+
             for(var i=0; i<schedule.length; i++){
                 var promoStart = new Date(schedule[i].promoStart);
                 var promoEnd = new Date(schedule[i].promoEnd);
@@ -144,6 +146,8 @@ var app = {
                     });
                     blueWatch.html(Math.ceil(stock*1.3*(promoEnd.getDate() + 1 - currentDate.getDate())));
                     blackWatch.html(Math.ceil(stock*(promoEnd.getDate() + 1 - currentDate.getDate())));
+                    whiteWatch.html(Math.floor(stock*1.3*(promoEnd.getDate() + 1 - currentDate.getDate())));
+                    cyanWatch.html(Math.floor(stock*.8*(promoEnd.getDate() + 1 - currentDate.getDate())));
                 }
             }
         });
@@ -180,46 +184,3 @@ jQuery(function($){
         app.checkVisibility();
     });
 });
-
-
-function getTimeRemaining(endtime) {
-  var t = Date.parse(endtime) - Date.now();
-  var seconds = Math.floor((t / 1000) % 60);
-  var minutes = Math.floor((t / 1000 / 60) % 60);
-  var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-  var days = Math.floor(t / (1000 * 60 * 60 * 24));
-  return {
-    'total': t,
-    'days': days,
-    'hours': hours,
-    'minutes': minutes,
-    'seconds': seconds
-  };
-}
-
-function initializeClock(id, endtime) {
-  var clock = document.getElementById(id);
-  var days = clock.querySelector('.days');
-  var hours = clock.querySelector('.hours');
-  var minutes = clock.querySelector('.minutes');
-  var seconds = clock.querySelector('.seconds');
-
-  function updateClock() {
-    var t = getTimeRemaining(endtime);
-
-    days.innerHTML = ('0' + t.days).slice(-2);
-    hours.innerHTML = ('0' + t.hours).slice(-2);
-    minutes.innerHTML = ('0' + t.minutes).slice(-2);
-    seconds.innerHTML = ('0' + t.seconds).slice(-2);
-
-    if (t.total <= 0) {
-      clearInterval(timeinterval);
-    }
-  }
-
-  updateClock();
-  var timeinterval = setInterval(updateClock, 1000);
-}
-
-var deadline = new Date('2015-12-31');
-//initializeClock('timer', deadline);

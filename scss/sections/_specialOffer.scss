@@ -1,33 +1,22 @@
 /* specialOfferSection =================================================================== */
     $specialOfferSection: '.specialOffer';
-    $timerBlockWidth: 47.2528%;
-    $specialOfferSectionFormWidth: 33.3334%;
     #{$specialOfferSection}{
         position: relative;
         color: #FFF;
         font-size: 0;
         background-image: url('../img/specialOffer.jpg');
+        text-align: center;
         h3{
             font: 700 85px/1 $primary-font;
+            margin: 0 0 $mainIndent*.75;
         }
         p{
-            margin: 0 0 $mainIndent;
-        }
-        .content{
-            padding: $mainIndent;
-            border: 5px solid $attentionColor;
-        }
-        .itm{
-            vertical-align: top;
+            margin: 0 0 $mainIndent*1.25;
         }
         .timerBlock{
-            width: $timerBlockWidth;
-            margin: 0 (100% - $specialOfferSectionFormWidth - $timerBlockWidth) 0 0;
-            font: 45px/.9 $primary-font;
-        }
-        .formWrapper{
-            width: $specialOfferSectionFormWidth;
-            padding-top: 10px;
+            padding: $mainIndent;
+            border: 5px solid $attentionColor;
+            font: 45px/1 $primary-font;
         }
     }
 /* Media Queries ========================================================================= */
@@ -43,25 +32,9 @@
     }
     @media screen and (max-width: $step5){
         #{$specialOfferSection}{
-            text-align: center;
             .timerBlock{
-                margin: 0 0 $mainIndent;
                 h3{
                     margin: 0 0 $mainIndent;
-                }
-            }
-            .timerBlock,
-            .formWrapper{
-                width: 100%;
-            }
-        }
-    }
-    @media screen and (max-width: $step6){
-        #{$specialOfferSection}{
-            .timerBlock{
-                font-size: 30px;
-                h3{
-                    font-size: 50px;
                 }
             }
         }

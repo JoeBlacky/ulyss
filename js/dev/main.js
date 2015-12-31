@@ -140,7 +140,7 @@ var app = {
                 var promoEnd = new Date(schedule[i].promoEnd);
                 var currentDate = new Date();
 
-                if(promoEnd > currentDate && currentDate >= promoStart ){
+                if(promoEnd >= currentDate && currentDate >= promoStart ){
                     $('#timer').countdown({
                         timestamp: promoEnd
                     });

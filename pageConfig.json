@@ -9,8 +9,8 @@
         "slogan": "Эксклюзивные, стильные, твои&#33"
     },
     "schedule": [
-        {"promoStart": "2015-12-20T00:00:00", "promoEnd": "2015-12-31T23:59:59"},
-        {"promoStart": "2016-01-01T00:00:00", "promoEnd": "2016-01-15T23:59:59"},
-        {"promoStart": "2016-01-16T00:00:00", "promoEnd": "2016-01-30T23:59:59"}
+        {"promoStart": "Dec 20 2015 00:00:00 GMT+0200", "promoEnd": "Dec 31 2015 23:59:59 GMT+0200"},
+        {"promoStart": "Jan 01 2016 00:00:00 GMT+0200", "promoEnd": "Jan 15 2016 23:59:59 GMT+0200"},
+        {"promoStart": "Jan 16 2016 00:00:00 GMT+0200", "promoEnd": "Jan 30 2016 23:59:59 GMT+0200"}
     ]
 }
